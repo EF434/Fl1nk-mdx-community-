@@ -29,6 +29,8 @@
                 </button>
             </div>
 
+            <button id="login-register-page" type="button">Login / Register</button>
+
             </div>
             
         </div>
@@ -75,7 +77,8 @@
                     <button class ="button-2" onclick="switch_page('feed')" alt="Explore Feed"> Explore More</button>
                 </div>
             </div>
-        </section>
+        </section>            
+        
 
         <section id="feed" class="page">
             <h1> Feed </h1>
@@ -93,6 +96,120 @@
 
         </section>
         </main>
+        </div>
+        <section class="login-register-page" id="auth-page" hidden>
+            <button id="back-home" type="button"> 🏠︎ Back Home</button>
+            <canvas id="fl1nk-mascot" width="362" height="500"></canvas>
+
+
+
+            <div class="main-section">
+            <!-- Create a checkbox for dynamic feature-->
+            <input type="checkbox" id="checkbox">
+            <div class="login-register-tabs">
+                <button type="button" id="show-signup" >Register</button>
+                <button type="button" id="show-login">Login</button>
+            </div>
+            <div class="signup">
+
+                <!-- Add Signup heading-->
+                <form>
+                    <!-- Profile Picture -->
+                    <div class="upload-picture">
+                        <label for="profile-image" class="profile-pic-circle" id="profile-circle">
+                            <img id="profile-pic"  src="../assets/images/profile_image.webp" alt="User Profile Picture">
+                            <span id="plus-icon">+</span>
+                        </label>
+
+                        <input type="file" id="profile-image" accept="image/*" required>
+                        <p class="error-message" id="profile-pic-error"></p>
+                    </div>
+
+                    <!-- Add Fist name heading-->
+                    <div>
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Emaan Fatima" id="fullname" required="">
+                        <p class="error-message" id="user-name-error"></p>
+                    </div>
+
+                    <!-- Add Username heading-->
+                    <div>
+                        <label>Username</label>
+                        <input type="text" placeholder="emaans101" id="register-username" required="">
+                        <p class="error-message" id="username-error"></p>
+                    </div>
+
+                    <!-- Add Emial heading-->
+                    <div>
+                        <label>Email</label>
+                        <input type="email" id="email" placeholder="emaanedu.hw@gmail.com" required="">
+                        <p class="error-message" id="email-error"></p>
+                    </div>
+
+                    <!-- Add Fist name heading-->
+                    <div>
+                        <label>Password</label>
+                        <div class="login-password-eye">
+                            <input type="password" id="password" placeholder="Password" required="">
+                            <ion-icon name="eye-outline" class="eye-icon" onclick="showPassword(this, 'password')"></ion-icon>
+                        </div>
+                        <p class="error-message" id="password-error"></p>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div>
+                        <label>Re-enter Password</label>
+                        <div class="login-password-eye">
+                            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                            <ion-icon class="eye-icon" name="eye-outline" onclick="showPassword(this, 'confirm-password')"></ion-icon>
+                        </div>
+                        <p class="error-message" id="confirm-password-error"></p>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div>
+                        <label>Date of Birth</label>
+                        <input type="date" id="user_dob" required>
+                        <p class="error-message" id="dob-error"></p>
+                    </div>
+
+                    <!-- Add Phone Number -->
+                    <div>
+                        <label>Contact Number</label>
+                        <input type="tel" id="phone-number" placeholder="+971 00 000 000" required="">
+                        <p class="error-message" id="number-error"></p>
+                    </div>
+
+                    <!-- Sign Up button -->
+                    <p id="success-message"></p>
+                    <button type="button" onclick="processInput()">Sign up</button>
+                </form>
+            </div>
+
+            <div class="login">
+                <form>
+                    
+                    <!-- Add email-->
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+
+                    <!-- Add password-->
+                    <label>Password</label>
+                    <div class="login-password-eye">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <ion-icon name="eye-outline" id="eye-icon" onclick="showPassword(this, 'login-password')"></ion-icon>
+                    </div>
+
+                    <!-- submit-->
+                    <p class="feedback-message" id="loginFeedback"></p>
+                    <button type="button" onclick="login()">Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+        </section>
+
 
     
     <!-- Adding external icons for footer in javascript-->
@@ -106,6 +223,7 @@
     </script>
 
     <script src="js/page_navigation.js"> </script>
+    <script src="js/fl1nk_animation.js"></script>
 
 
 

@@ -10,6 +10,11 @@ const feed_page = document.getElementById('feed');
 const program_page = document.getElementById('program');
 const post_page = document.getElementById('create-post');
 
+// home page and login/register page switching logic
+const home_view = document.getElementById('home-view');
+const login_register_page = document.getElementById('auth-page');
+const login_register_button = document.getElementById('login-register-page');
+const back_home_button = document.getElementById('back-home');
 
 let pages = document.querySelectorAll('.page');
 
@@ -37,3 +42,17 @@ post_button.addEventListener('click', () =>
     switch_page('create-post'));
 
 switch_page('home');
+
+
+
+
+login_register_button.addEventListener('click', () => {
+  home_view.hidden = true;
+  login_register_page.hidden = false;
+});
+
+back_home_button.addEventListener('click', () => {
+  login_register_page.hidden = true;
+  home_view.hidden = false;
+  switch_page('home');
+});
