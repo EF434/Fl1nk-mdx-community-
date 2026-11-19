@@ -9,6 +9,8 @@
         <!-- Add a favicon and link external CSS file-->
         <link rel="icon" href="assets/images/favicon.png" type="image/png">
         <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lilita+One&family=Playwrite+BE+WAL+Guides&display=swap" rel="stylesheet">
+
     
     </head>
     <body>
@@ -81,7 +83,36 @@
         
 
         <section id="feed" class="page">
-            <h1> Feed </h1>
+            <div class="feed-content">
+                <h1> Discover Communities </h1>
+            </div>
+
+            <div class="search-elements">
+                <label> Find Community</label>
+                <input type="search" id="community-search" placeholder="Search communities">
+            </div>
+
+            <div class="community-filters">
+                <div>
+                    <label>Program</label>
+                    <select id="program-filter">
+                        <option value=""> AI and Data Science</option>
+                        <option value=""> Information Technology (IT)</option>
+                        <option value=""> Computer systems engineering</option>
+                        <option value=""> Cybersecurity Forensic</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Category</label>
+                    <select id="category-filter">
+                        <option value=""> Academic Discussion</option>
+                        <option value=""> Social Activities</option>
+                        <option value=""> Events & Workshops</option>
+                        <option value=""> Other</option>
+                    </select>
+                </div>
+            </div>
 
         </section>
 
@@ -99,7 +130,18 @@
         </div>
         <section class="login-register-page" id="auth-page" hidden>
             <button id="back-home" type="button"> 🏠︎ Back Home</button>
-            <canvas id="fl1nk-mascot" width="362" height="500"></canvas>
+            <div class="auth-introduction">
+                <canvas id="fl1nk-mascot" width="362" height="500"></canvas>
+                <div class="page-text">
+                    <h1 class="lilita-one-regular">
+                        <span id="first-line"></span>
+                        <br>
+                        <span class="font-styling" id="second-line"></span>
+                    </h1>
+
+                    <p>Meet classmates, explore courses, and <br> join the conversation! </p>
+                </div>
+            </div>
 
 
 
@@ -224,7 +266,7 @@
 
     <script src="js/page_navigation.js"> </script>
     <script src="js/fl1nk_animation.js"></script>
-
+    <script src="js/typing_animation.js"></script>
 
 
     </body>

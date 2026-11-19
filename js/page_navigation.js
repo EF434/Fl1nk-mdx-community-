@@ -11,6 +11,7 @@ const program_page = document.getElementById('program');
 const post_page = document.getElementById('create-post');
 
 // home page and login/register page switching logic
+const form_checkbox = document.getElementById("checkbox");
 const home_view = document.getElementById('home-view');
 const login_register_page = document.getElementById('auth-page');
 const login_register_button = document.getElementById('login-register-page');
@@ -56,3 +57,11 @@ back_home_button.addEventListener('click', () => {
   home_view.hidden = false;
   switch_page('home');
 });
+
+document.getElementById("show-signup").onclick = function () {
+    form_checkbox.checked = false;
+};
+
+document.getElementById("show-login").onclick = function () {
+    form_checkbox.checked = true;
+};
