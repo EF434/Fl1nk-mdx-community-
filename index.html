@@ -32,6 +32,8 @@
             </div>
 
             <button id="login-register-page" type="button">Login / Register</button>
+            <button id="profile_setup_page" type="button">profile setup</button>
+            
 
             </div>
             
@@ -85,15 +87,19 @@
         <section id="feed" class="page">
             <div class="feed-content">
                 <h1> Discover Communities </h1>
+                <p> Find your classmates, explore your interest, and join the conversation.</p>
             </div>
 
-            <div class="search-elements">
-                <label> Find Community</label>
-                <input type="search" id="community-search" placeholder="Search communities">
-            </div>
+            <form class="community-bar">
+                <div class="search-elements">
+                    <label> Find a community</label>
+                    <div class="search-box">
+                        <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                        <input type="search" id="community-search" placeholder="Search communities">
+                    </div>
+                </div>
 
-            <div class="community-filters">
-                <div>
+                <div class="community-filters">
                     <label>Program</label>
                     <select id="program-filter">
                         <option value=""> AI and Data Science</option>
@@ -103,7 +109,7 @@
                     </select>
                 </div>
 
-                <div>
+                <div class="community-filters">
                     <label>Category</label>
                     <select id="category-filter">
                         <option value=""> Academic Discussion</option>
@@ -112,12 +118,322 @@
                         <option value=""> Other</option>
                     </select>
                 </div>
+                <button type="reset" class="reset-filters"> Reset</button>
+        </form>
+
+        <div class="community-tabs">
+            <button type="button" id="joined-count">Joined (0)</button>
+            <button type="button" id="discover-count" class="active">Discover (0)</button>
+            <span class="communities-text" id="communities-count">0 communities</span>
+        </div>
+
+        <div class="communities-grid">
+            <div class="community-item">
+                <div class="community-banner"> 
+                    <img src="assets/images/ai-comminity.png" alt="AI and Data Sceince community image">
+                </div>
+
+                <h3>AI & Data Science</h3>
+                <p>Explore about AI, share projects, and learn together.</p>
+                <span class="community-category">Academic</span>
+
+                <div class="community-bottom">
+                    <span>128 members</span>
+                    <button type="button">Join community</button>
+                </div>
             </div>
+
+            <div class="community-item">
+                <div class="community-banner">
+                    <img src="assets/images/computer.png" alt="AI and Data Sceince community image">
+                </div>
+
+                <h3>Computer Science</h3>
+                <p>Meet classmates, solve problems, and build ideas.</p>
+                <span class="community-category">Academic</span>
+
+                <div class="community-bottom">
+                    <span>246 members</span>
+                    <button type="button" class="joined">✓ Joined</button>
+                </div>
+            </div>
+
+            <div class="community-item">
+                <div class="community-banner pink">
+                    <img src="assets/images/mcs.png" alt="AI and Data Sceince community image">
+                </div>
+
+                <h3>MDX Computing Society</h3>
+                <p>Connect, collaborate, and exchange business ideas.</p>
+                <span class="community-category">Events & Workshops</span>
+
+                <div class="community-bottom">
+                    <span>184 members</span>
+                    <button type="button">Join community</button>
+                </div>
+
+            </div>
+
+            <div class="community-item">
+                <div class="community-banner pink">
+                    <img src="assets/images/mdx-sports.png" alt="AI and Data Sceince community image">
+                </div>
+
+                <h3>MDX Sports Club</h3>
+                <p>Find teammates, join campus sports, and stay updated on MDX matches and tournaments.</p>
+                <span class="community-category">Social Activities</span>
+
+                <div class="community-bottom">
+                    <span>184 members</span>
+                    <button type="button">Join community</button>
+                </div>
+            </div>
+        </div>
 
         </section>
 
         <section id="program" class="page">
-            <h1> Program </h1>
+            <div class="feed-content">
+                <h1> Find your classmates </h1>
+                <p> Connect with students from your program and scross MDX!</p>
+
+                <div class="students-page">
+                    <form class="students-sidebar">
+                        <h2> Filter students</h2>
+
+                        
+
+                        <div class="year-filter">
+                            <!-- Year -->
+                            <h3>Year of study</h3>
+
+                            <label><input type="checkbox"> IFP</label>
+                            <label><input type="checkbox"> Year 1</label>
+                            <label><input type="checkbox"> Year 2</label>
+                            <label><input type="checkbox"> Year 3</label>
+                            <label><input type="checkbox"> Alumini</label>
+
+                            <label class="program-text">Program</label>
+                            <select id="students-program">
+                                <option value=""> All programs</option>
+                                <option value=""> AI and Data Science</option>
+                                <option value=""> Business Management</option>
+                                <option value=""> IFP in Computer Science</option>
+                            </select>
+
+
+                            <!-- Campus option-->
+                            <h3>Campus</h3>
+                            <select id="student-campus">
+                                <option>All campuses</option>
+                                <option>Dubai Campus</option>
+                                <option>UK  Campus</option>
+                                <option>Mauritius Campus</option>
+                            </select>
+                        </div>
+
+                        <div class="sidebar-buttons">
+                            <button type="button" class="apply-filters">Apply filters</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                    
+                    </form>
+
+                    <div class="search-students">
+                        <div class="search-box">
+                            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                            <input type="search" id="student-search" placeholder="Find Student by Name or MISIS">
+                        </div>
+
+                        <div class="students-info">
+                            <span id="students-count">0 Students Found</span>
+                            <select>
+                                <option> Name A-Z</option>
+                                <option> Name Z-A</option>
+                            </select>
+                        </div>
+
+                        <div class="student-cards">
+                            <div class="student-card">
+                                <div class="student-info">
+                                    <img src="assets/images/brian.png">
+                                    <div>
+                                        <span class="stu-status"> ● Online</span>
+                                        <h3> Brian Tan</h3>
+                                        <p> BSc in AI and Data Science</p>
+                                        <p> Year 2 - Dubai</p>
+                                    </div>
+                                </div>
+                                <div class="hobbies">
+                                    <span> Web Development</span>
+                                    <span> Sport</span>
+                                    <span> Robotics</span>
+                                </div>
+                                <p class="stu-bio">
+                                    Hi there! I am passionate about learnig new things, 
+                                    and building projects.
+                                </p>
+
+                                    <div class="card-buttons">
+                                    <button type="button"> View Profile</button>
+                                    <button type="button" class="message-button"> Message</button>
+                                </div>
+                            </div>
+
+                            
+                            <div class="student-card card-2">
+                                <div class="student-info">
+                                    <img src="assets/images/emaan.png">
+                                    <div>
+                                        <span class="stu-status"> ● Online</span>
+                                        <h3> Emaan Fatima</h3>
+                                        <p> BSc in AI and Data Science</p>
+                                        <p> Year 2 - Dubai</p>
+                                    </div>
+                                </div>
+                                <div class="hobbies">
+                                    <span> Robotics</span>
+                                    <span> Machine Vision</span>
+                                    <span> Physical AI</span>
+                                </div>
+                                <p class="stu-bio">
+                                    Hi there! I am Emaan and I love learning new things 
+                        
+                                </p>
+
+                                <div class="card-buttons">
+                                    <button type="button"> View Profile</button>
+                                    <button type="button" class="message-button"> Message</button>
+                                </div>
+                            </div>
+
+                            <div class="student-card card-3">
+                                <div class="student-info">
+                                    <img src="assets/images/sarah.png">
+                                    <div>
+                                        <h3> Sarah Brown</h3>
+                                        <p> BSc in Information Technology (IT)</p>
+                                        <p> Year 1 - UK</p>
+                                    </div>
+                                </div>
+                                <div class="hobbies">
+                                    <span> Public Speaking</span>
+                                    <span> Sports</span>
+                                    <span> Robotics</span>
+                                </div>
+                                <p class="stu-bio">
+                                    Hi there! Lets connect  
+                        
+                                </p>
+
+                                <div class="card-buttons">
+                                    <button type="button"> View Profile</button>
+                                    <button type="button" class="message-button"> Message</button>
+                                </div>
+                            </div>
+
+                            <div class="student-card card-4">
+                                <div class="student-info">
+                                    <img src="assets/images/sarah.png">
+                                    <div>
+                                        <h3> Ahmed Khalid</h3>
+                                        <p> BSc in Businesss</p>
+                                        <p> Year 3 - Dubai</p>
+                                    </div>
+                                </div>
+                                <div class="hobbies">
+                                    <span> Mathematics</span>
+
+                                </div>
+                                <p class="stu-bio">
+                                    Hi I am Ahmed, and I love solving business problems  
+                        
+                                </p>
+
+                                <div class="card-buttons">
+                                    <button type="button"> View Profile</button>
+                                    <button type="button" class="message-button"> Message</button>
+                                </div>
+                            </div>
+
+                            <!-- <div class="student-card card-4">
+                                <div class="student-info">
+                                    <img src="assets/images/sarah.png">
+                                    <h3> Jessica Lind</h3>
+                                    <p> IFP in Media and communications</p>
+                                    <p> IFP - Mauritius</p>
+                                </div>
+                                <div class="hobbies">
+                                    <span> Graphic Design</span>
+                                    <span> Painting</span>
+                                    <span> Content writing</span>
+                                </div>
+                                <p class="stu-bio">
+                                    Hi I am Jess, and I love content writing and posting online 
+                        
+                                </p>
+
+                                <div class="card-buttons">
+                                    <button type="button"> View Profile</button>
+                                    <button type="button" class="message-button"> Message</button>
+                                </div>
+                            </div>
+
+                            <div class="student-card card-4">
+                                <div class="student-info">
+                                    <img src="assets/images/sarah.png">
+                                    <h3> Liz Adams</h3>
+                                    <p> BSc in Law</p>
+                                    <p> Year 2 - UK</p>
+                                </div>
+                                <div class="hobbies">
+                                    <span> Debating</span>
+                                </div>
+                                <p class="stu-bio">
+                                    Hey I am Liz, and i am studying law
+                        
+                                </p>
+
+                                <div class="card-buttons">
+                                    <button type="button"> View Profile</button>
+                                    <button type="button" class="message-button"> Message</button>
+                                </div>
+                            </div>
+
+                            <div class="student-card card-5">
+                                <div class="student-info">
+                                    <img src="assets/images/sarah.png">
+                                    <h3> Umer Khan</h3>
+                                    <p> Bsc in Accounting</p>
+                                    <p> Year 1 - UK</p>
+                                </div>
+                                <div class="hobbies">
+                                    <span> Public Speaking</span>
+                                    <span> Sports</span>
+                                    <span> Robotics</span>
+                                </div>
+                                <p class="stu-bio">
+                                    Hi there! Lets connect  
+                        
+                                </p>
+
+                                <div class="card-buttons">
+                                    <button type="button"> View Profile</button>
+                                    <button type="button" class="message-button"> Message</button>
+                                </div>
+                            </div> -->
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+                
+            </div>
+
+
+            
 
         </section>
 
@@ -248,9 +564,94 @@
                 </form>
             </div>
         </div>
-    </main>
+    </section>
 
-        </section>
+
+    <section class="profile_setup_page" id="profile-page" >
+
+        <form class="profile-form">
+            <div class="side-text">
+                <h1 class="lilita-one-regular">
+                    <span>Find your people at MDX</span>
+                </h1>
+                <p>Complete your profile so classmates <br> can find and connect with you</p>
+                <canvas id="profile-mascot" width="362" height="500"></canvas>
+            </div>
+
+            <div class="profile-card">
+                <h2> Complete your profile</h2>
+                <p>Tell us about your studies and interests</p>
+                <button class="profile-button" type="button">
+                <img id="user-pic" src="assets/images/default_pic.png" alt="">
+                <span id="username"></span>
+                </button>
+
+
+            <div class="profile-content">
+                <label class="program-text field-heading">Program</label>
+                <select id="students-program">
+                    <option value=""> All programs</option>
+                    <option value=""> AI and Data Science</option>
+                    <option value=""> Business Management</option>
+                    <option value=""> IFP in Computer Science</option>
+                </select>
+
+                <div class="form-row">
+                    <div>
+                        <label class="field-heading">Year of study</label>
+                        <select id="user-year" required>
+                            <option value="" selected disabled>Select your year</option>
+                            <option value="ifp">IFP</option>
+                            <option value="1">Year 1</option>
+                            <option value="2">Year 2</option>
+                            <option value="3">Year 3</option>
+                            <option value="alumni">Alumni</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="field-heading">Campus</label>
+                        <select id="student-campus">
+                            <option>All campuses</option>
+                            <option>Dubai Campus</option>
+                            <option>UK  Campus</option>
+                            <option>Mauritius Campus</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <label class="field-heading">Interests</label>
+                <div class="hobbies">
+                    <label><input type="checkbox" name="hobbies" value="web-development"> Web Development</label>
+                    <label><input type="checkbox" name="hobbies" value="sport"> Sport</label>
+                    <label><input type="checkbox" name="hobbies" value="robotics"> Robotics</label>
+                    <label><input type="checkbox" name="hobbies" value="robotics"> Design</label>
+                    <label><input type="checkbox" name="hobbies" value="robotics"> Events</label>
+                    <label><input type="checkbox" name="hobbies" value="robotics"> Book Reading</label>
+                    <label><input type="checkbox" name="hobbies" value="robotics"> Content Writing</label>
+                </div>
+                <label class="field-heading"> About you</label>
+                <textarea id="about-you" name="about" maxlength="200" rows="3">
+
+                </textarea>
+                <button class="setup-button">Finish Setup</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!---<footer>
+        
+        <!-- Add footer section with icons, redirect user to the social media pages
+        <!--<ul class="social-icons">
+            <li><a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="https://x.com/"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        </ul>
+        <!-- Addedd copyright text-->
+        <!--<p class="copyright-text">© 2026 FL1NK. All rights reserved.</p>
+    <!--</footer>
 
 
     

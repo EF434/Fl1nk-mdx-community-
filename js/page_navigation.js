@@ -15,6 +15,8 @@ const form_checkbox = document.getElementById("checkbox");
 const home_view = document.getElementById('home-view');
 const login_register_page = document.getElementById('auth-page');
 const login_register_button = document.getElementById('login-register-page');
+const profile_setup_button = document.getElementById('profile_setup_page');
+const profile_setup_page = document.getElementById('profile_setup_page');
 const back_home_button = document.getElementById('back-home');
 
 let pages = document.querySelectorAll('.page');
@@ -46,10 +48,22 @@ switch_page('home');
 
 
 
-
 login_register_button.addEventListener('click', () => {
   home_view.hidden = true;
   login_register_page.hidden = false;
+});
+
+profile_setup_button.addEventListener('click', () => {
+    home_view.hidden = true;
+    login_register_page.hidden = true;
+    profile_setup_page.hidden = false;
+});
+
+back_home_button.addEventListener('click', () => {
+    login_register_page.hidden = true;
+    profile_setup_page.hidden = true;
+    home_view.hidden = false;
+    switch_page('home');
 });
 
 back_home_button.addEventListener('click', () => {
@@ -65,3 +79,13 @@ document.getElementById("show-signup").onclick = function () {
 document.getElementById("show-login").onclick = function () {
     form_checkbox.checked = true;
 };
+
+const community_tabs = document.querySelectorAll('.community-tabs button');
+
+community_tabs.forEach(button => {
+    button.addEventListener('click', () => {
+        community_tabs.forEach(tab => tab.classList.remove('active'));
+
+        button.classList.add('active');
+    });
+});
