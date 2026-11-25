@@ -620,6 +620,14 @@ footer .copyright-text {
     top: 350px;
 }
 
+#profile-mascot {
+    position: relative;
+    width: 210px;
+    height: auto;
+    top: 80px;
+    left: 60px;
+}
+
 /* Right side — keep the width needed by your signup form */
 .main-section {
     position: relative;
@@ -653,6 +661,10 @@ footer .copyright-text {
 
 
 #auth-page[hidden] {
+    display: none;
+}
+
+#profile-page[hidden] {
     display: none;
 }
 
@@ -1162,7 +1174,7 @@ footer .copyright-text {
 .profile-card h2{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
     position: relative;
-    left: 150px;
+    left: 30px;
     font-size: 45px;
     top: -20px;
     color:#4f3600;
@@ -1171,10 +1183,10 @@ footer .copyright-text {
 .profile-card p{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
     position: relative;
-    left: 160px;
+    left: 30px;
     font-size: 20px;
     color:#4f3600;
-    top: -60px
+    top: -55px
 }
 
 #user-pic{
@@ -1300,4 +1312,86 @@ footer .copyright-text {
     background-color: #faf8ff;
     border-radius: 10px;
     padding: 30px;
+}
+
+
+
+
+
+.communites-bar {
+    width: 1100px;
+    height: 110px;
+    margin: 10px auto;
+    padding: 3px 20px;
+    background-color: rgb(244, 243, 253);
+    border-radius: 16px;
+    box-shadow: 0 3px 10px rgba(61, 35, 105, 0.1);
+}
+
+.bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.bar-content h2 {
+    position: relative;
+    margin: 0;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 2px;
+    color: #020744;
+    top: 5px;
+}
+
+.bar-content .explore-link {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    color: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    top: 12px;
+    color: #3c3e45;
+}
+
+.communites-names {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.communites-names button {
+    display: flex;
+    align-items: center;
+    flex: 1 1 150px;
+    gap: 10px;
+    padding: 10px 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color: transparent;
+    font-family: 'Gill Sans', Calibri, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    color: #000985;
+}
+
+.communites-names button:hover {
+    position: relative;
+    background-color: #e81683;
+    top: 10px;
+    height: 60px;
+}
+
+.communites-names img {
+    width: 80px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.communites-names small {
+    display: block;
+    color: #62597c;
 }

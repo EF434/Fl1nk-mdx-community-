@@ -16,7 +16,7 @@ const home_view = document.getElementById('home-view');
 const login_register_page = document.getElementById('auth-page');
 const login_register_button = document.getElementById('login-register-page');
 const profile_setup_button = document.getElementById('profile_setup_page');
-const profile_setup_page = document.getElementById('profile_setup_page');
+const profile_setup_page = document.getElementById('profile-page');
 const back_home_button = document.getElementById('back-home');
 
 let pages = document.querySelectorAll('.page');

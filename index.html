@@ -439,7 +439,68 @@
 
         <section id="create-post" class="page">
 
-            <h1> Create post </h1>
+            <section class="communites-bar">
+                <div class="bar-content">
+                    <h2>Communities</h2>
+                    <a class="explore-link" href="#community-page"> Explore all →</a>
+                </div>
+
+                <div class="communites-names">
+                    <button type="button" class="ai-comunity">
+                        <img src="assets/images/ai-comminity.png" alt="AI Community Image">
+                        <span>
+                            <strong> AI & Data Science</strong>
+                            <small>2.1k members</small>
+                        </span>
+                    </button>
+
+                    <button type="button" class="computer-comunity">
+                        <img src="assets/images/computer.png" alt="Computer Community Image">
+                        <span>
+                            <strong> Computer Science</strong>
+                            <small>1.1k members</small>
+                        </span>
+                    </button>
+
+                    <button type="button" class="mcs-comunity">
+                        <img src="assets/images/mcs.png" alt="MCS Community Image">
+                        <span>
+                            <strong> MDX Computing Society</strong>
+                            <small>5.1k members</small>
+                        </span>
+                    </button>
+
+
+                    <button type="button" class="sports-comunity">
+                        <img src="assets/images/mdx-sports.png" alt="MDX Sports Image">
+                        <span>
+                            <strong> MDX Sports Club</strong>
+                            <small>9k members</small>
+                        </span>
+                    </button>
+                </div>
+            </section>
+
+            <section>
+                <div class="feed-bar">
+                    <div class="feed-tabs">
+                        <button type="button" class="feed-tab active"> Following</button>
+                        <button type="button" class="feed-tab"> All posts</button>
+                    </div>
+
+                    <div class="feed-actions">
+                        <select id="feed-comunity">
+                            <option value="all"> All communities</option>
+                            <option value="ai"> AI and Data Science</option>
+                            <option value="mcs">MDX Computing Society</option>
+                            <option value="cs"> Computer Science</option>
+                            <option value="sports"> MDX Sports Club</option>
+                        </select>
+                    </div>
+
+                    <button type="button"
+                </div>
+            </section>
 
         </section>
         </main>
@@ -567,15 +628,15 @@
     </section>
 
 
-    <section class="profile_setup_page" id="profile-page" >
-
+    <section class="profile_setup_page" id="profile-page" hidden>
+        <button id="back-home" type="button"> 🏠︎ Back Home</button>
         <form class="profile-form">
             <div class="side-text">
                 <h1 class="lilita-one-regular">
                     <span>Find your people at MDX</span>
                 </h1>
                 <p>Complete your profile so classmates <br> can find and connect with you</p>
-                <canvas id="profile-mascot" width="362" height="500"></canvas>
+                <canvas id="profile-mascot" width="250" height="400"></canvas>
             </div>
 
             <div class="profile-card">

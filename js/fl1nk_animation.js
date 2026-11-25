@@ -19,8 +19,7 @@ for (let column = 0; column < frameCount; column++) {
   });
 }
 
-const canvas = document.getElementById('fl1nk-mascot');
-const context = canvas.getContext('2d');
+const canvases = document.querySelectorAll("#fl1nk-mascot, #profile-mascot");
 const spriteSheet = new Image();
 
 let currentFrame = 0;
@@ -31,12 +30,16 @@ function animate(timestamp) {
   if (timestamp - lastFrameTime >= frameDelay) {
     const frame = fl1nkAnimationData.fl1nk_frames[currentFrame].position;
 
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(
-      spriteSheet,
-      frame.x, frame.y, frame.width, frame.height,
-      0, 0, canvas.width, canvas.height
-    );
+    for (const canvas of canvases) {
+      const context = canvas.getContext("2d");
+
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(
+        spriteSheet,
+        frame.x, frame.y, frame.width, frame.height,
+        0, 0, canvas.width, canvas.height
+      );
+    }
 
     currentFrame = (currentFrame + 1) % frameCount;
     lastFrameTime = timestamp;
@@ -46,4 +49,4 @@ function animate(timestamp) {
 }
 
 spriteSheet.onload = () => requestAnimationFrame(animate);
-spriteSheet.src = 'assets/images/fl1nk_sprite_sheet.png';
+spriteSheet.src = "assets/images/fl1nk_sprite_sheet.png";
