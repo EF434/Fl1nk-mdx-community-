@@ -49,4 +49,4 @@ function animate(timestamp) {
 }
 
 spriteSheet.onload = () => requestAnimationFrame(animate);
-spriteSheet.src = "assets/images/fl1nk_sprite_sheet.png";
+spriteSheet.src = "images/fl1nk_sprite_sheet.png";

@@ -7,10 +7,10 @@
         <!-- Provide the title name-->
         <title>V1sionOS</title>
         <!-- Add a favicon and link external CSS file-->
-        <link rel="icon" href="assets/images/favicon.png" type="image/png">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lilita+One&family=Playwrite+BE+WAL+Guides&display=swap" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
     
     </head>
     <body>
@@ -19,14 +19,38 @@
         <header class="page-header">
         <div class="header-items">
             <a class="fl1nk-logo" href="#home">
-            <img src="assets/images/favicon.png" alt="FL1NK logo">
+            <img class="fl1nk-side-logo" src="images/logo.png" alt="FL1NK logo">
             
             </a>
+
+            <nav class="nav-links">
+                <ul>
+                    <li>
+                        <button type="button" class="active-button" data-page="home"
+                        onclick="switch_page('home')"> Home
+                        </button>
+                    </li>
+                    <li>                
+                        <button type="button" data-page="feed"
+                        onclick="switch_page('feed')"> Dashboard
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" data-page="about"
+                        onclick="switch_page('about')"> About Us
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <button id="back-home-button" class="back-button" type="button"
+                    onclick="switch_page('home')" hidden>Back to Home
+            </button>
 
             <div class="account-controls">
             <div id="logged-in-user" hidden>
                 <button class="profile-button" type="button">
-                <img id="user-pic" src="assets/images/default_pic.png" alt="">
+                <img id="user-pic" src="images/default_pic.png" alt="">
                 <span id="username"></span>
                 </button>
             </div>
@@ -49,45 +73,77 @@
         </nav>
 
 
-        <main>
-        <section id="home" class="page">
-            <div class="hero-banner">
-                <div class="banner-content">
-                    <a class="fl1nk-img"><img src="assets/images/logo-image.png" alt="Fl1nk Logo"></a>
-                    <a class="mdx-img"><img src="assets/images/mdx-logo.png" alt="Fl1nk Logo"></a>
-                    <h1>Find your people at MDX</h1>
-                    <h2> Explore courses, meet classmates <br>and join the conversation!</h2>
-                </div>
-                <a class="effect-img"><img src="assets/images/effect.png" alt="Fl1nk Logo"></a>
+        <main class="home-page">
+            <section id="home" class="page">
+                <div class="hero-banner">
+                    <div class="banner-content">
+                        <a class="fl1nk-img"><img src="images/logo-image.png" alt="Fl1nk Logo"></a>
+                        <a class="mdx-img"><img src="images/mdx-logo.png" alt="Fl1nk Logo"></a>
+                        <h1>Find your people at MDX</h1>
+                        <h2> Explore courses, meet classmates <br>and join the conversation!</h2>
+                    </div>
+                    <a class="effect-img"><img src="images/effect.png" alt="Fl1nk Logo"></a>
 
-                <div class="community-cards">
-                    <div class="community-card">
-                    <img src="assets/images/discover.png" alt="Discover Communities Image">
-                    <h3> Discover <br> communities</h3>
+                    <div class="banner-buttons">
+                        <button class ="button-1" onclick="switch_page('program')" alt="Find Classmates button"> Find Classmates</button>
+                        <button class ="button-2" onclick="switch_page('feed')" alt="Explore Feed"> Explore More</button>
+                    </div>
+                </div>
+                    <section class="information-cards" id="infomation-cards">
+                    <h2> Explore communities</h2>
+                    
+                    <div class="community-cards">
+                        <div class="community-card">
+                        <img src="images/discover.png" alt="Discover Communities Image">
+                        <h3> Discover <br> communities</h3>
                     </div>
 
                     <div class="community-card">
-                    <img src="assets/images/classmates.png" alt="Discover Communities Image">
-                    <h3> Find <br> classmates</h3>
+                        <img src="images/classmates.png" alt="Discover Communities Image">
+                        <h3> Find <br> classmates</h3>
                     </div>
 
                     <div class="community-card">
-                    <img src="assets/images/events.png" alt="Discover Communities Image">
-                    <h3> See what's <br> happening</h3>
+                        <img src="images/events.png" alt="Discover Communities Image">
+                        <h3> See what's <br> happening</h3>
+                        </div>
+                    </div>
+            </section>
+
+            <section class="student-reviews">
+                <h2>What's happening on FL1NK</h2>
+
+                <div class="stu-cards">
+                    <div class="stu-card">
+                        <img src="images/brian.png" alt="User Profile Image">
+                        <h3> Which community do you recommend joining?</h3>
+                        <p> I would highly recommend joing the MCS society as<br>
+                            it really helped me learn more about the tech domain
+                        </p>
+                        <span> - Matt Jacks</span>
+                    </div>
+                    <div class="stu-card">
+                        <img src="images/emma.png" alt="User Profile Image">
+                        <h3> What was the benefits of joing Fl1nk?</h3>
+                        <p> I really love how you can meet people from different courses
+                            just by simply searching in courses, I met my start up founders from
+                            different fields because of fl1nk</p>
+                        <span> - Emma Brown</span>
                     </div>
                 </div>
-                <div class="banner-buttons">
-                    <button class ="button-1" onclick="switch_page('program')" alt="Find Classmates button"> Find Classmates</button>
-                    <button class ="button-2" onclick="switch_page('feed')" alt="Explore Feed"> Explore More</button>
-                </div>
-            </div>
-        </section>            
+            </section>
+            </section> 
+        </main>
+        
+    
         
 
         <section id="feed" class="page">
             <div class="feed-content">
-                <h1> Discover Communities </h1>
+                <span class="feed-p1"> Discover </span>
+                <span class="feed-p2">  Communities </span>
                 <p> Find your classmates, explore your interest, and join the conversation.</p>
+                <img class="banner-img" src="images/feed-banner.png" alt="Feed Banner">
             </div>
 
             <form class="community-bar">
@@ -130,7 +186,7 @@
         <div class="communities-grid">
             <div class="community-item">
                 <div class="community-banner"> 
-                    <img src="assets/images/ai-comminity.png" alt="AI and Data Sceince community image">
+                    <img src="images/ai-comminity.png" alt="AI and Data Sceince community image">
                 </div>
 
                 <h3>AI & Data Science</h3>
@@ -140,12 +196,13 @@
                 <div class="community-bottom">
                     <span>128 members</span>
                     <button type="button">Join community</button>
+                    <button type="button" class="view-community">View</button>
                 </div>
             </div>
 
             <div class="community-item">
                 <div class="community-banner">
-                    <img src="assets/images/computer.png" alt="AI and Data Sceince community image">
+                    <img src="images/computer.png" alt="AI and Data Sceince community image">
                 </div>
 
                 <h3>Computer Science</h3>
@@ -154,13 +211,14 @@
 
                 <div class="community-bottom">
                     <span>246 members</span>
-                    <button type="button" class="joined">✓ Joined</button>
+                    <button type="button">Join community</button>
+                    <button type="button" class="view-community">View</button>
                 </div>
             </div>
 
             <div class="community-item">
                 <div class="community-banner pink">
-                    <img src="assets/images/mcs.png" alt="AI and Data Sceince community image">
+                    <img src="images/mcs.png" alt="AI and Data Sceince community image">
                 </div>
 
                 <h3>MDX Computing Society</h3>
@@ -170,13 +228,14 @@
                 <div class="community-bottom">
                     <span>184 members</span>
                     <button type="button">Join community</button>
+                    <button type="button" class="view-community">View</button>
                 </div>
 
             </div>
 
             <div class="community-item">
                 <div class="community-banner pink">
-                    <img src="assets/images/mdx-sports.png" alt="AI and Data Sceince community image">
+                    <img src="images/mdx-sports.png" alt="AI and Data Sceince community image">
                 </div>
 
                 <h3>MDX Sports Club</h3>
@@ -186,22 +245,50 @@
                 <div class="community-bottom">
                     <span>184 members</span>
                     <button type="button">Join community</button>
+                    <button type="button" class="view-community">View</button>
                 </div>
             </div>
         </div>
 
         </section>
 
+        <section id="community-section" class="page" hidden>
+            <button type="button"  id="back-to-communites" class="back-button">
+                Back to communities
+            </button>
+
+            <div class="comunity-banner">
+                <img id="community-page-img">
+                <span id="community-category" class="community-category category-style"></span>
+                <span class="space-line"> | </span>
+                <span id="community-members"></span>
+
+            </div>
+                <section class="discussion-box">
+                    <div class="discussion-headers">
+                        <h2> Discussions</h2>
+                        <button type="button" id="discussion-button"> + Create Discussion</button>
+                    </div>
+                    <p id="community-discussions"> No discussion yet</p>
+                </section>
+
+                <h2> About this community</h2>
+                <p id="community-description"></p> 
+            
+
+        </section>
+
         <section id="program" class="page">
-            <div class="feed-content">
-                <h1> Find your classmates </h1>
-                <p> Connect with students from your program and scross MDX!</p>
+            <div class="feed-content program-pg">
+                <span class="feed-p1"> Find your </span>
+                <span class="feed-p2">  classmates </span>
+                <p> Connect with students from your program and across MDX!</p>
+                <img class="banner-img student-img" src="images/classmates-banner.png" alt="Classmates Page Banner">
+            </div>
 
                 <div class="students-page">
                     <form class="students-sidebar">
                         <h2> Filter students</h2>
-
-                        
 
                         <div class="year-filter">
                             <!-- Year -->
@@ -256,7 +343,7 @@
                         <div class="student-cards">
                             <div class="student-card">
                                 <div class="student-info">
-                                    <img src="assets/images/brian.png">
+                                    <img src="images/brian.png">
                                     <div>
                                         <span class="stu-status"> ● Online</span>
                                         <h3> Brian Tan</h3>
@@ -283,7 +370,7 @@
                             
                             <div class="student-card card-2">
                                 <div class="student-info">
-                                    <img src="assets/images/emaan.png">
+                                    <img src="images/emaan.png">
                                     <div>
                                         <span class="stu-status"> ● Online</span>
                                         <h3> Emaan Fatima</h3>
@@ -309,10 +396,10 @@
 
                             <div class="student-card card-3">
                                 <div class="student-info">
-                                    <img src="assets/images/sarah.png">
+                                    <img src="images/sarah.png">
                                     <div>
-                                        <h3> Sarah Brown</h3>
-                                        <p> BSc in Information Technology (IT)</p>
+                                        <h3> Raniya Ambali</h3>
+                                        <p> BEng Computer Systems engineering</p>
                                         <p> Year 1 - UK</p>
                                     </div>
                                 </div>
@@ -334,7 +421,7 @@
 
                             <div class="student-card card-4">
                                 <div class="student-info">
-                                    <img src="assets/images/sarah.png">
+                                    <img src="images/sarah.png">
                                     <div>
                                         <h3> Ahmed Khalid</h3>
                                         <p> BSc in Businesss</p>
@@ -447,7 +534,7 @@
 
                 <div class="communites-names">
                     <button type="button" class="ai-comunity">
-                        <img src="assets/images/ai-comminity.png" alt="AI Community Image">
+                        <img src="images/ai-comminity.png" alt="AI Community Image">
                         <span>
                             <strong> AI & Data Science</strong>
                             <small>2.1k members</small>
@@ -455,7 +542,7 @@
                     </button>
 
                     <button type="button" class="computer-comunity">
-                        <img src="assets/images/computer.png" alt="Computer Community Image">
+                        <img src="images/computer.png" alt="Computer Community Image">
                         <span>
                             <strong> Computer Science</strong>
                             <small>1.1k members</small>
@@ -463,7 +550,7 @@
                     </button>
 
                     <button type="button" class="mcs-comunity">
-                        <img src="assets/images/mcs.png" alt="MCS Community Image">
+                        <img src="images/mcs.png" alt="MCS Community Image">
                         <span>
                             <strong> MDX Computing Society</strong>
                             <small>5.1k members</small>
@@ -472,7 +559,7 @@
 
 
                     <button type="button" class="sports-comunity">
-                        <img src="assets/images/mdx-sports.png" alt="MDX Sports Image">
+                        <img src="images/mdx-sports.png" alt="MDX Sports Image">
                         <span>
                             <strong> MDX Sports Club</strong>
                             <small>9k members</small>
@@ -498,7 +585,45 @@
                         </select>
                     </div>
 
-                    <button type="button"
+                    <div class="create-post-button">
+                        <button type="button" id="create-post-button"> + Create post</button>
+                       <div id="post-popup" hidden>
+                            <form id="post-card">
+                                <h2 id="form-title">Create a Post</h2>
+
+                                <label> Community</label>
+                                <select id="post-community">
+                                    <option value="all"> All communities</option>
+                                    <option value="ai"> AI and Data Science</option>
+                                    <option value="mcs">MDX Computing Society</option>
+                                    <option value="cs"> Computer Science</option>
+                                    <option value="sports"> MDX Sports Club</option>
+                                </select>
+
+                                <label> Question</label>
+                                <input type="text" id="post-question" 
+                                    placeholder="Create a post in a community" required>
+
+                                <label> Desciption</label>
+                                <textarea id="post-description" rows="4"
+                                    placeholder="Tell us about it">
+                                </textarea>
+
+                                <div class="post-tools">
+                                    <button type="button"><i class="bi bi-emoji-smile" aria-hidden="true"></i> Emoji</button>
+                                    <button type="button"><i class="bi bi-image" aria-hidden="true"></i> Image</button>
+                                    <button type="button"><i class="bi bi-camera-video" aria-hidden="true"></i> Video</button>
+                                    <button type="button"><i class="bi bi-link-45deg" aria-hidden="true"></i> Link</button>
+                                </div>
+
+                                <div class="post-action">
+                                    <button type="button" id="cancel-post">Cancel</button>
+                                    <button type="submit" class="post-question">Post</button>
+                                </div>
+
+                            </form>
+                        </div> 
+                    </div>
                 </div>
             </section>
 
@@ -506,7 +631,7 @@
         </main>
         </div>
         <section class="login-register-page" id="auth-page" hidden>
-            <button id="back-home" type="button"> 🏠︎ Back Home</button>
+            <button class="back-home" type="button"> 🏠︎ Back Home</button>
             <div class="auth-introduction">
                 <canvas id="fl1nk-mascot" width="362" height="500"></canvas>
                 <div class="page-text">
@@ -536,7 +661,7 @@
                     <!-- Profile Picture -->
                     <div class="upload-picture">
                         <label for="profile-image" class="profile-pic-circle" id="profile-circle">
-                            <img id="profile-pic"  src="../assets/images/profile_image.webp" alt="User Profile Picture">
+                            <img id="profile-pic"  src="../assetsimages/profile_image.webp" alt="User Profile Picture">
                             <span id="plus-icon">+</span>
                         </label>
 
@@ -629,7 +754,7 @@
 
 
     <section class="profile_setup_page" id="profile-page" hidden>
-        <button id="back-home" type="button"> 🏠︎ Back Home</button>
+        <button class="back-home" type="button"> 🏠︎ Back Home</button>
         <form class="profile-form">
             <div class="side-text">
                 <h1 class="lilita-one-regular">
@@ -643,7 +768,7 @@
                 <h2> Complete your profile</h2>
                 <p>Tell us about your studies and interests</p>
                 <button class="profile-button" type="button">
-                <img id="user-pic" src="assets/images/default_pic.png" alt="">
+                <img id="user-pic" src="images/default_pic.png" alt="">
                 <span id="username"></span>
                 </button>
 
@@ -702,17 +827,17 @@
         </form>
     </section>
 
-    <!---<footer>
+    <footer>
         
-        <!-- Add footer section with icons, redirect user to the social media pages
-        <!--<ul class="social-icons">
+        <!-- Add footer section with icons, redirect user to the social media pages  -->
+        <ul class="social-icons">
             <li><a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a></li>
             <li><a href="https://x.com/"><ion-icon name="logo-twitter"></ion-icon></a></li>
             <li><a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a></li>
         </ul>
         <!-- Addedd copyright text-->
-        <!--<p class="copyright-text">© 2026 FL1NK. All rights reserved.</p>
-    <!--</footer>
+        <p class="copyright-text">© 2026 FL1NK. All rights reserved.</p>
+    </footer>
 
 
     
@@ -726,9 +851,9 @@
      src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js">
     </script>
 
-    <script src="js/page_navigation.js"> </script>
-    <script src="js/fl1nk_animation.js"></script>
-    <script src="js/typing_animation.js"></script>
+    <script src="../js/page_navigation.js"> </script>
+    <script src="../js/fl1nk_animation.js"></script>
+    <script src="../js/typing_animation.js"></script>
 
 
     </body>
